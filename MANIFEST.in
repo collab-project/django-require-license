@@ -1,0 +1,12 @@
+include README.rst LICENSE tox.ini .coveragerc runtests.py
+
+recursive-include requirements *
+recursive-include require_license *
+
+recursive-include doc *
+prune doc/_build
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * *~
+recursive-exclude * .coverage

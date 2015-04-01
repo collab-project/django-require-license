@@ -1,0 +1,6 @@
+/*! Copyright {copyright_holder} {copyright_year} - v{version} ({timestamp})
+ *
+ * This is an optimized build of the application code. It excludes comments and
+ * license headers of third-party client-side libraries for better performance.
+ * For a list of these libraries and their licenses, visit {license_url}.
+*/

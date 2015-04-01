@@ -1,0 +1,16 @@
+*.py[co]
+.project
+.pydevproject
+.settings
+*.egg
+*.egg-info
+dist
+build
+require_license/tests/static
+require_license/tests/media
+.coverage
+*.pid
+doc/_build
+htmlcov/
+.tox/
+.DS_Store
