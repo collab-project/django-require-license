@@ -1,0 +1,11 @@
+language: python
+python:
+  - "2.7"
+  - "3.4"
+install:
+  - "pip install -r requirements/production.txt"
+  - "pip install -r requirements/testing.txt"
+  - "pip install ."
+script:
+  - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then tox -e py27,coverage; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then tox -e py34; fi
