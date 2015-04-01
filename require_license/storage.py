@@ -37,7 +37,7 @@ class LicenseHeaderMixin(OptimizedFilesMixin):
                 config.update({'version': version})
 
             # inject header
-            with open(license_path, 'rb') as header:
+            with open(license_path, 'r') as header:
                 license_header = header.read().format(**config)
 
             # prepend license header to content
@@ -50,7 +50,7 @@ class LicenseHeaderMixin(OptimizedFilesMixin):
             if kwargs['dry_run'] == False:
                 # overwrite updated content to file
                 with open(module_path, 'wb') as output_file:
-                    output_file.write(content)
+                    output_file.write(content.encode('utf-8'))
 
 
 class OptimizedStaticFilesStorage(LicenseHeaderMixin, StaticFilesStorage):

@@ -21,7 +21,7 @@ class StorageTestCase(TestCase):
         header to the minified JS module.
         """
         call_command("collectstatic", interactive=False, dry_run=False,
-            verbosity=0)
+            clear=False, verbosity=0)
 
         # minified file created
         self.assertTrue(os.path.exists(os.path.join(
