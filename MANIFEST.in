@@ -1,7 +1,10 @@
 include README.rst LICENSE tox.ini .coveragerc runtests.py
 
 recursive-include requirements *
+
 recursive-include require_license *
+prune require_license/tests/static
+prune require_license/tests/media
 
 recursive-include doc *
 prune doc/_build
