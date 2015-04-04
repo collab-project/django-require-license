@@ -5,7 +5,7 @@
 """
 
 #: Application version.
-__version__ = (1, 0, 0, 'b1')
+__version__ = (1, 0, 0, 'b2')
 
 
 def short_version(version=None):
