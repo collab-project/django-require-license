@@ -14,9 +14,8 @@ from django.utils.encoding import smart_bytes
 
 from django.contrib.staticfiles.storage import StaticFilesStorage
 
+from require.helpers import import_module_attr
 from require.storage import OptimizedFilesMixin
-
-from require_license import version
 
 
 class LicenseHeaderMixin(OptimizedFilesMixin):
@@ -35,8 +34,14 @@ class LicenseHeaderMixin(OptimizedFilesMixin):
                 self.location,
                 config.get('license_file'))
 
-            # use local version if 'version' key is missing
-            if 'version' not in config:
+            # get version number
+            if 'version' in config:
+                version = config.get('version')
+                try:
+                    # grab version from module attribute
+                    version = import_module_attr(version)
+                except ImportError:
+                    pass
                 config.update({'version': version})
 
             # inject header

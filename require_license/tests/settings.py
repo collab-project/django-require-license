@@ -21,8 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.sessions',
     'django.contrib.contenttypes',
-    'django.contrib.staticfiles',
-    'require_license'
+    'django.contrib.staticfiles'
 ]
 
 SECRET_KEY = 'top_secret'
@@ -95,10 +94,11 @@ REQUIRE_STANDALONE_MODULES = {
     }
 }
 
-# A dictionary of output files that need a license header with configs.
+# A dictionary of output files with a license header config.
 REQUIRE_LICENSE_HEADERS = {
     os.path.join(REQUIRE_BASE_URL, 'app.min.js'): {
         'license_file': os.path.join(REQUIRE_BASE_URL, 'JS-LICENSE.txt'),
+        'version': 'require_license.version',
         'timestamp': date.today(),
         'copyright_year': datetime.now().year,
         'copyright_holder': 'MyCompany',
