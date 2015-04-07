@@ -8,13 +8,13 @@ Setup Require.js Application
 ----------------------------
 
 Start by creating and configuring the require.js application. If your
-application is already up and running, you can move on to the
+application is already up and running, you can skip to the
 :ref:`Django configuration <django-config>` section.
 
 Structure
 ^^^^^^^^^
 
-For example, in a Django_ project called ``myproject`` there is a
+For this example, in a Django_ project called ``myproject``, there is a
 require.js application called ``app`` with a directory structure
 similar to this::
 
@@ -35,8 +35,8 @@ similar to this::
         - JS-LICENSE.txt
 
 
-Application
-^^^^^^^^^^^
+Main Application
+^^^^^^^^^^^^^^^^
 
 The main require.js application in ``static/js/app/main.js`` contains:
 
@@ -155,6 +155,8 @@ for details):
 
 .. code-block:: python
 
+  import os
+
   # The baseUrl to pass to the r.js optimizer.
   REQUIRE_BASE_URL = 'js'
 
@@ -181,9 +183,11 @@ for details):
   }
 
   # A tuple of files to exclude from the compilation result of r.js.
-  REQUIRE_EXCLUDE = ('build.txt',
+  REQUIRE_EXCLUDE = (
+      'build.txt',
       os.path.join(REQUIRE_BASE_URL, REQUIRE_BUILD_PROFILE),
   )
+
 
 Configure Header
 ^^^^^^^^^^^^^^^^
@@ -194,6 +198,8 @@ and a dict containing the variables that we inject into the license header.
 
 .. code-block:: python
 
+  from datetime import datetime, date
+
   # A dictionary of output files with a license header config.
   REQUIRE_LICENSE_HEADERS = {
       os.path.join(REQUIRE_BASE_URL, 'app.min.js'): {
@@ -202,17 +208,16 @@ and a dict containing the variables that we inject into the license header.
           'copyright_year': datetime.now().year,
           'copyright_holder': 'MyCompany',
           'license_url': 'http://example.com/license',
-          'version': '1.0.1'
+          'version': 'myproject.version'
       }
   }
 
 The only mandatory key is ``license_file``: the path to the license header
 template file, eg. ``js/JS-LICENSE.txt``.
 
-The ``version`` key (optional) is special: use a string value here,
-eg. ``1.0.4``, or specify a fully-qualified path to an
-attribute that contains a string version instead,
-eg. ``myproject.version``.
+The ``version`` key is special: use a string value here, eg. ``1.0.4``, or
+specify a fully-qualified path to an attribute that contains a string version
+instead, eg. ``myproject.version``.
 
 Any other keys found in the dict will also be injected in the license header
 template.
