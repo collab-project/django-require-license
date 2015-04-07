@@ -1,7 +1,7 @@
 django-require-license
 ======================
 
-License header for django-require projects.
+License header for `django-require`_ projects.
 
 .. image:: https://img.shields.io/pypi/v/django-require-license.svg
     :target: https://pypi.python.org/pypi/django-require-license
@@ -34,3 +34,4 @@ Documentation can be found on `readthedocs.org`_.
 .. _PyPi: https://pypi.python.org/pypi/django-require-license
 .. _readthedocs.org: https://django-require-license.readthedocs.org/en/latest
 .. _Github: https://github.com/collab-project/django-require-license
+.. _django-require: https://github.com/etianen/django-require

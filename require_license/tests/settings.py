@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright Collab 2015
 
 import os

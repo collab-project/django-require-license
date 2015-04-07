@@ -4,6 +4,8 @@
 Tests for the :py:mod:`require_license` module.
 """
 
+from __future__ import unicode_literals
+
 from django.test import TestCase
 
 from require_license import get_version

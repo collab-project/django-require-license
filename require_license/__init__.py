@@ -4,6 +4,8 @@
 `django-require-license` application.
 """
 
+from __future__ import unicode_literals
+
 #: Application version.
 __version__ = (1, 0, 0, 'b2')
 

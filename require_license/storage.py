@@ -4,10 +4,13 @@
 Custom static files storage for the :py:mod:`require_license` application.
 """
 
+from __future__ import unicode_literals
+
 import os
-from datetime import date
+import codecs
 
 from django.conf import settings
+from django.utils.encoding import smart_bytes
 
 from django.contrib.staticfiles.storage import StaticFilesStorage
 
@@ -42,7 +45,7 @@ class LicenseHeaderMixin(OptimizedFilesMixin):
 
             # prepend license header to content
             module_path = self.path(module_file)
-            with open(module_path, 'rb') as input_file:
+            with codecs.open(module_path, 'rb', encoding='utf-8') as input_file:
                 content = '{header}\n{data}'.format(
                     header=license_header,
                     data=input_file.read())
@@ -50,7 +53,7 @@ class LicenseHeaderMixin(OptimizedFilesMixin):
             if kwargs['dry_run'] == False:
                 # overwrite updated content to file
                 with open(module_path, 'wb') as output_file:
-                    output_file.write(content.encode('utf-8'))
+                    output_file.write(smart_bytes(content))
 
 
 class OptimizedStaticFilesStorage(LicenseHeaderMixin, StaticFilesStorage):
