@@ -20,7 +20,7 @@ class StorageTestCase(TestCase):
     Tests for :py:mod:`~require_license.storage`.
     """
     def tearDown(self):
-        if os.path.exists(self.file_path):
+        if hasattr(self, 'file_path') and os.path.exists(self.file_path):
             os.remove(self.file_path)
 
     def assertHeaderEqual(self, version, expectedVersion):
