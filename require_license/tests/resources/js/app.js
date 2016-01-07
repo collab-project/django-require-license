@@ -1,4 +1,4 @@
-// Copyright Collab 2012-2015
+// Copyright Collab 2012-2016
 
 require.config({
 

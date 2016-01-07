@@ -1,4 +1,5 @@
-# Copyright Collab 2013-2015
+# Copyright Collab 2013-2016
+# See LICENSE for details.
 
 """
 Custom static files storage for the :py:mod:`require_license` application.
