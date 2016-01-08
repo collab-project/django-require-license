@@ -8,7 +8,7 @@
 from __future__ import unicode_literals
 
 #: Application version.
-__version__ = (1, 0, 0)
+__version__ = (1, 0, 1)
 
 
 def short_version(version=None):
