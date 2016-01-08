@@ -8,6 +8,7 @@ dist
 build
 require_license/tests/static
 require_license/tests/media
+node_modules/
 .coverage
 *.pid
 doc/_build
