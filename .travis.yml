@@ -1,14 +1,17 @@
 language: python
-python:
-  - "2.7"
-  - "3.4"
 sudo: false
-cache: pip
-install:
-  - "pip install -U pip"
-  - "pip install -r requirements/production.txt"
-  - "pip install -r requirements/testing.txt"
-  - "pip install ."
-script:
-  - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then tox -e py27,coveralls; fi
-  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then tox -e py34; fi
+cache:
+  directories:
+  - $HOME/.cache/pip
+matrix:
+  allow_failures:
+    - python: "3.4"
+install: pip install --upgrade pip tox wheel
+script: tox
+env:
+  - TOXENV=py27-django-17
+  - TOXENV=py27-django-18
+  - TOXENV=py27-django-19
+  - TOXENV=py34-django-18
+  - TOXENV=py34-django-19
+  - TOXENV=coveralls
