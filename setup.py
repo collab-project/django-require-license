@@ -7,21 +7,21 @@ from require_license import version
 
 
 setup(
-    name = "django-require-license",
-    version = version,
-    license = "MIT",
-    description = "License header for django-require projects.",
-    author = "Thijs Triemstra",
-    author_email = "info@collab.nl",
-    url = "https://github.com/collab-project/django-require-license",
-    packages = [
+    name="django-require-license",
+    version=version,
+    license="MIT",
+    description="License header for django-require projects.",
+    author="Thijs Triemstra",
+    author_email="info@collab.nl",
+    url="https://github.com/collab-project/django-require-license",
+    packages=[
         "require_license"
     ],
     install_requires=[
         "django-require"
     ],
     keywords="django requirejs plugin require.js",
-    classifiers = [
+    classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
         "Framework :: Django",
