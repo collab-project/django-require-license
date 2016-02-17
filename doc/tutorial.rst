@@ -47,10 +47,10 @@ The main require.js application in ``static/js/app/main.js`` contains:
     'loglevel'
   ], function($, log)
   {
-    
+
     log.enableAll();
     log.debug("Hello world!");
-    
+
   });
 
 So we import the loglevel_ library as ``log``, enable logging on all
@@ -239,4 +239,4 @@ compressed ``app.min.js`` with license header.
 .. _django-require: https://github.com/etianen/django-require
 .. _r.js docs: http://requirejs.org/docs/optimization.html#options
 .. _loglevel: https://github.com/pimterry/loglevel
-.. _collect and optimize: https://github.com/etianen/django-require#running-the-rjs-optmizer
+.. _collect and optimize: https://github.com/etianen/django-require#running-the-rjs-optimizer

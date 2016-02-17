@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright Collab 2015.
+# Copyright Collab 2015-2016.
 #
 # django-require-license documentation build configuration file.
 #
