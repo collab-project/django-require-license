@@ -17,7 +17,10 @@ setup(
     packages = [
         "require_license"
     ],
-    keywords='django requirejs plugin require.js',
+    install_requires=[
+        "django-require"
+    ],
+    keywords="django requirejs plugin require.js",
     classifiers = [
         "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
