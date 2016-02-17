@@ -36,7 +36,7 @@ class StorageTestCase(TestCase):
                     'timestamp': date.today(),
                     'copyright_year': datetime.now().year,
                     'copyright_holder': 'MyCompany',
-                    'license_url': 'http://example.com/license'
+                    'license_url': 'https://example.com/license'
                 }
             }):
 
@@ -52,7 +52,8 @@ class StorageTestCase(TestCase):
             self.assertTrue(os.path.exists(self.file_path))
 
             # verify header
-            with codecs.open(self.file_path, 'rb', encoding='utf-8') as output_file:
+            with codecs.open(self.file_path, 'rb', encoding='utf-8')\
+                as output_file:
                 lines = output_file.readlines()[:6]
 
                 self.assertEqual(lines[0],
@@ -63,7 +64,7 @@ class StorageTestCase(TestCase):
 
                 self.assertEqual(lines[-2],
                     ' * For a list of these libraries and their licenses,'
-                    ' visit http://example.com/license.\n')
+                    ' visit https://example.com/license.\n')
 
     def test_basic(self):
         """

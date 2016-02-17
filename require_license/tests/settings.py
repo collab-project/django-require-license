@@ -63,7 +63,6 @@ STATIC_URL = '/static/'
 # `collectstatic` management command.
 # Default: :py:class:`django.contrib.staticfiles.storage.StaticFilesStorage`
 # Require.js: :py:class:`require.storage.OptimizedStaticFilesStorage`
-# django-require-license: :py:class:`require_license.storage.OptimizedStaticFilesStorage`
 STATICFILES_STORAGE = 'require_license.storage.OptimizedStaticFilesStorage'
 
 # =============================================================================
@@ -123,7 +122,7 @@ REQUIRE_ENVIRONMENT = "auto"
 # LOGGING
 # =============================================================================
 
-# See http://docs.djangoproject.com/en/dev/topics/logging for
+# See https://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
 
 LOG_HANDLER = 'null'
@@ -137,9 +136,6 @@ LOGGING = {
         }
     },
     'formatters': {
-        'verbose': {
-            'format': '%(asctime)s %(levelname)-6s %(name)-15s - %(process)d %(thread)d %(message)s'
-        },
         'simple': {
             'format': '%(asctime)s %(levelname)-6s %(name)-15s - %(message)s'
         },

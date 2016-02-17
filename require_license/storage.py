@@ -29,7 +29,8 @@ class LicenseHeaderMixin(OptimizedFilesMixin):
             *args, **kwargs):
             yield item
 
-        for module_file, config in list(settings.REQUIRE_LICENSE_HEADERS.items()):
+        for module_file, config in list(
+            settings.REQUIRE_LICENSE_HEADERS.items()):
             # path to license header file
             license_path = os.path.join(
                 self.location,
@@ -51,12 +52,12 @@ class LicenseHeaderMixin(OptimizedFilesMixin):
 
             # prepend license header to content
             module_path = self.path(module_file)
-            with codecs.open(module_path, 'rb', encoding='utf-8') as input_file:
+            with codecs.open(module_path, 'rb', encoding='utf-8') as in_file:
                 content = '{header}\n{data}'.format(
                     header=license_header,
-                    data=input_file.read())
+                    data=in_file.read())
 
-            if kwargs['dry_run'] == False:
+            if kwargs['dry_run'] is False:
                 # overwrite updated content to file
                 with open(module_path, 'wb') as output_file:
                     output_file.write(smart_bytes(content))
