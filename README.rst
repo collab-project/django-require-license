@@ -30,11 +30,11 @@ Or checkout the source code from Github_::
 Documentation
 -------------
 
-Documentation can be found on `readthedocs.org`_.
+Documentation can be found on `readthedocs.io`_.
 
 .. _Django: https://www.djangoproject.com
 .. _pip: https://pypi.python.org/pypi/pip
 .. _PyPi: https://pypi.python.org/pypi/django-require-license
-.. _readthedocs.org: https://django-require-license.readthedocs.org/en/latest
+.. _readthedocs.io: https://django-require-license.readthedocs.io/en/latest
 .. _Github: https://github.com/collab-project/django-require-license
 .. _django-require: https://github.com/etianen/django-require
