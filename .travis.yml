@@ -9,9 +9,10 @@ matrix:
 install: pip install --upgrade pip tox wheel
 script: tox
 env:
-  - TOXENV=py27-django-17
   - TOXENV=py27-django-18
   - TOXENV=py27-django-19
+  - TOXENV=py27-django-110
   - TOXENV=py34-django-18
   - TOXENV=py34-django-19
+  - TOXENV=py34-django-110
   - TOXENV=coveralls
