@@ -3,9 +3,6 @@ sudo: false
 cache:
   directories:
   - $HOME/.cache/pip
-matrix:
-  allow_failures:
-    - python: "3.4"
 install: pip install --upgrade pip tox wheel
 script: tox
 env:
@@ -17,4 +14,8 @@ env:
   - TOXENV=py34-django-19
   - TOXENV=py34-django-110
   - TOXENV=py34-django-111
+  - TOXENV=py35-django-18
+  - TOXENV=py35-django-19
+  - TOXENV=py35-django-110
+  - TOXENV=py35-django-111
   - TOXENV=coveralls
